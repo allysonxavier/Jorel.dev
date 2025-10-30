@@ -42,27 +42,27 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-400 via-pink-400 to-red-400 p-4">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-100 p-4">
       <div className="text-center">
         {!showDog ? (
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-orange-900 mb-8 drop-shadow-lg">
               Tenho uma surpresa para você!
             </h1>
             <button
               onClick={handleClick}
-              className="group relative px-12 py-6 bg-white text-purple-600 rounded-full text-2xl md:text-3xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:bg-purple-50"
+              className="group relative px-12 py-6 bg-white text-orange-700 rounded-full text-2xl md:text-3xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:bg-orange-50"
             >
               <span className="relative z-10">Clique aqui! 🎁</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-200 to-pink-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-200 to-amber-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-            <p className="mt-6 text-white text-lg md:text-xl drop-shadow">
+            <p className="mt-6 text-orange-900 text-lg md:text-xl drop-shadow">
               Vai valer a pena, eu prometo!
             </p>
           </div>
         ) : (
           <div className="animate-slide-up bg-white rounded-3xl p-8 shadow-2xl max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-purple-600 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-700 mb-6">
               {currentPhrase}
             </h2>
 
@@ -81,7 +81,7 @@ export default function Home() {
               {/* Navegação do Slider */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-orange-700 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="Foto anterior"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export default function Home() {
 
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-orange-700 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
                 aria-label="Próxima foto"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
