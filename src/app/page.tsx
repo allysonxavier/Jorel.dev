@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 const cutePhrases = [
   "Este é o melhor cachorro do mundo! 🐶",
@@ -9,13 +10,21 @@ const cutePhrases = [
   "O cachorro mais lindo que você vai ver hoje! ✨",
   "Prepare-se para um ataque de fofura! 🌟",
   "Este cachorro roubou meu coração! ❤️",
-  "Cuteness overload! 🎉",
   "Não resisti, tive que compartilhar! 🐾"
+];
+
+const jorelPhotos = [
+  '/aquajorel.jpeg',
+  '/20250916_165021.jpg',
+  '/20251003_134941.jpg',
+  '/20251004_212139.jpg',
+  '/Screenshot_20250911_111559_Instagram.jpg'
 ];
 
 export default function Home() {
   const [showDog, setShowDog] = useState(false);
   const [currentPhrase, setCurrentPhrase] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleClick = () => {
     if (!showDog) {
@@ -25,9 +34,12 @@ export default function Home() {
     }
   };
 
-  const handleReset = () => {
-    setShowDog(false);
-    setCurrentPhrase('');
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % jorelPhotos.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + jorelPhotos.length) % jorelPhotos.length);
   };
 
   return (
@@ -55,37 +67,60 @@ export default function Home() {
               {currentPhrase}
             </h2>
 
-            <div className="relative mb-6 rounded-2xl overflow-hidden shadow-xl">
-              {/* Placeholder para a foto do cachorro */}
-              <div className="aspect-square bg-gradient-to-br from-yellow-200 to-pink-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-6xl mb-4">🐕</p>
-                  <p className="text-gray-700 text-lg font-medium">
-                    Adicione a foto do seu cachorro aqui!
-                  </p>
-                  <p className="text-gray-500 text-sm mt-2">
-                    Coloque a imagem em /public/cachorro.jpg
-                  </p>
-                </div>
+            <div className="relative mb-6 rounded-2xl overflow-hidden shadow-xl group">
+              <div className="relative w-full h-[500px] md:h-[600px]">
+                <Image
+                  src={jorelPhotos[currentImageIndex]}
+                  alt="Jorel - o beagle mais fofo"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
               </div>
-              {/* Descomente quando adicionar a foto:
-              <Image
-                src="/cachorro.jpg"
-                alt="Meu cachorro fofo"
-                width={600}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
-              */}
+
+              {/* Navegação do Slider */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="Foto anterior"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110"
+                aria-label="Próxima foto"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Indicadores de foto */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {jorelPhotos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? 'bg-white w-8'
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                    aria-label={`Ir para foto ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            <button
-              onClick={handleReset}
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              Ver de novo! 🔄
-            </button>
+            {/* Contador de fotos */}
+            <p className="text-gray-500 text-sm">
+              Foto {currentImageIndex + 1} de {jorelPhotos.length}
+            </p>
           </div>
         )}
       </div>
@@ -111,14 +146,6 @@ export default function Home() {
             opacity: 1;
             transform: translateY(0) scale(1);
           }
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out;
-        }
-
-        .animate-slide-up {
-          animation: slide-up 0.5s ease-out;
         }
       `}</style>
     </main>
