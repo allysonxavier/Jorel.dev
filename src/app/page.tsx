@@ -4,10 +4,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const cutePhrases = [
-  "Este é o melhor cachorro do mundo! 🐶",
+  "Jorel o melhor cachorro do mundo! 🐶",
   "Olha só essa fofura! 💕",
   "Muito amor em uma foto só! 🥰",
-  "O cachorro mais lindo que você vai ver hoje! ✨",
+  "O beagle mais lindo que você vai ver hoje! ✨",
   "Prepare-se para um ataque de fofura! 🌟",
   "Este cachorro roubou meu coração! ❤️",
   "Não resisti, tive que compartilhar! 🐾"
@@ -16,9 +16,8 @@ const cutePhrases = [
 const jorelPhotos = [
   '/aquajorel.jpeg',
   '/20250916_165021.jpg',
-  '/20251003_134941.jpg',
   '/20251004_212139.jpg',
-  '/Screenshot_20250911_111559_Instagram.jpg'
+  '/jorelzinho.jpeg',
 ];
 
 export default function Home() {
@@ -75,7 +74,7 @@ export default function Home() {
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 768px) 100vw, 600px"
+                  sizes=" 100vw, 672px"
                 />
               </div>
 
