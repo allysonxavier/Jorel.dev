@@ -2,25 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { cutePhrases, jorelPhotos } from '@/constants';
 
-const cutePhrases = [
-  "Jorel o melhor cachorro do mundo! 🐶",
-  "Olha só essa fofura! 💕",
-  "Muito amor em uma foto só! 🥰",
-  "O beagle mais lindo que você vai ver hoje! ✨",
-  "Prepare-se para um ataque de fofura! 🌟",
-  "Este cachorro roubou meu coração! ❤️",
-  "Não resisti, tive que compartilhar! 🐾"
-];
-
-const jorelPhotos = [
-  '/aquajorel.jpeg',
-  '/20250916_165021.jpg',
-  '/20251004_212139.jpg',
-  '/jorelzinho.jpeg',
-];
-
-export default function Home() {
+const Home = () => {
   const [showDog, setShowDog] = useState(false);
   const [currentPhrase, setCurrentPhrase] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -126,3 +110,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;
