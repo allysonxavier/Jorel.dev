@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { cutePhrases, jorelPhotos } from '@/constants';
+import { cutePhrases, jorelPhotos } from 'constants/jorel';
 
 const Home = () => {
   const [showDog, setShowDog] = useState(false);
