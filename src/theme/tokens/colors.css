@@ -1,0 +1,30 @@
+:root {
+  /* Brand */
+  --color-orange: #f27c00;
+  --color-orange-hover: #d96e00;
+  --color-orange-light: #fff3e8;
+  --color-orange-border: #f2a64d;
+
+  /* Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-warm: #faf7f4;
+  --color-bg-dark: #1a1a1a;
+
+  /* Text */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-text-white: #ffffff;
+  --color-text-orange: #f27c00;
+
+  /* UI */
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-border: #e8e0d8;
+  --color-input-bg: #f5f0eb;
+  --color-card-bg: #ffffff;
+  --color-badge-bg: #fff3e8;
+
+  /* Checkmarks */
+  --color-check-orange: #f27c00;
+  --color-check-dark: #1a1a1a;
+}

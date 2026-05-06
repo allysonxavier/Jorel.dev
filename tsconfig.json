@@ -2,38 +2,37 @@
   "compilerOptions": {
     "baseUrl": "src",
     "jsx": "preserve",
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "esnext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
     "skipLibCheck": true,
-    "outDir": "dist",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
     "noEmit": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "incremental": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsxImportSource": "react",
+    "allowSyntheticDefaultImports": true,
+    "plugins": [{ "name": "next" }],
     "paths": {
-      "@/*": ["./*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+      "components/*": ["components/*"],
+      "constants/*": ["constants/*"],
+      "theme/*": ["theme/*"],
+      "assets/*": ["assets/*"],
+      "hooks/*": ["hooks/*"]
+    }
   },
   "include": [
-    "src",
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules", ".next"]
 }
