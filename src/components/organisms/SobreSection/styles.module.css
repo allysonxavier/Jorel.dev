@@ -112,10 +112,12 @@
 
 .feature_icon--orange {
   background-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 .feature_icon--dark {
   background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .feature_text {

@@ -1,3 +1,13 @@
+import type { ComponentType } from 'react'
+
+import {
+  FaBone,
+  FaWalking,
+  FaUtensils,
+  FaPaw,
+  FaBed,
+} from 'react-icons/fa'
+
 export const jorelPhotos = [
   '/aquajorel.jpeg',
   '/20250916_165021.jpg',
@@ -6,7 +16,7 @@ export const jorelPhotos = [
 ]
 
 export type SobreFeature = {
-  icon: string
+  icon: ComponentType
   title: string
   description: string
   variant: 'orange' | 'dark'
@@ -15,32 +25,39 @@ export type SobreFeature = {
 
 export const sobreFeatures: SobreFeature[] = [
   {
-    icon: '🦴',
+    icon: FaBone,
     title: 'Brincar com seus brinquedos',
     description: 'Jorel adora seus brinquedos favoritos e passa horas se divertindo',
     variant: 'orange',
     photo: '/jorelzinho.jpeg'
   },
   {
-    icon: '🚶',
+    icon: FaWalking,
     title: 'Passeios ao ar livre',
     description: 'Explorar novos lugares e cheirar tudo pelo caminho é sua paixão',
     variant: 'dark',
     photo: '/20250916_165021.jpg'
   },
   {
-    icon: '🍖',
+    icon: FaUtensils,
     title: 'Petiscos deliciosos',
     description: 'Nada deixa o Jorel mais feliz do que um petisco especial',
     variant: 'orange',
     photo: '/aquajorel.jpeg'
   },
   {
-    icon: '🐾',
+    icon: FaPaw,
     title: 'Fazer novos amigos',
     description: 'Jorel é super sociável e adora conhecer outros cachorros e pessoas',
     variant: 'dark',
     photo: '/20251004_212139.jpg'
+  },
+  {
+    icon: FaBed,
+    title: 'Dormir a tarde toda',
+    description: 'Beagles elevaram a soneca à categoria de esporte — o Jorel consegue dormir em qualquer canto, de qualquer jeito, a qualquer hora',
+    variant: 'orange',
+    photo: '/jorelzinho.jpeg'
   }
 ]
 

@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+import { FaCamera } from 'react-icons/fa'
+
 import Button from 'components/atoms/Button'
 
 import S from './styles.module.css'
@@ -30,7 +32,7 @@ const EnvioSection = () => {
     <section className={S.section} id="envio">
       <div className={S.inner}>
         <div className={S.header}>
-          <div className={S.badge}>📷 Participe</div>
+          <div className={S.badge}><FaCamera /> Participe</div>
           <h2 className={S.title}>Envie a Foto do Seu Cachorro</h2>
           <p className={S.subtitle}>
             Tem um cachorrinho especial? Compartilhe uma foto e faça parte da

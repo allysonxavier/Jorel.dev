@@ -1,5 +1,7 @@
 import { clsx } from 'clsx'
 
+import { FaGift } from 'react-icons/fa'
+
 import { petiscoItems } from 'constants/jorel'
 
 import SectionBadge from 'components/atoms/SectionBadge'
@@ -10,7 +12,7 @@ const PetiscoSection = () => (
   <section className={S.section} id="petisco">
     <div className={S.inner}>
       <div className={S.header}>
-        <SectionBadge icon="🎁" label="Contribua" />
+        <SectionBadge icon={<FaGift />} label="Contribua" />
         <h2 className={S.title}>Me Pague um Petisco</h2>
         <p className={S.subtitle}>
           Quer fazer o dia do Jorel mais feliz? Contribua para seus petiscos favoritos!

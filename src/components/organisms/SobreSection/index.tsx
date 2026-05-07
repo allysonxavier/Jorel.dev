@@ -6,6 +6,8 @@ import Image from 'next/image'
 
 import { clsx } from 'clsx'
 
+import { FaHeart } from 'react-icons/fa'
+
 import { sobreFeatures } from 'constants/jorel'
 
 import SectionBadge from 'components/atoms/SectionBadge'
@@ -21,7 +23,7 @@ const SobreSection = () => {
     <section className={S.section} id="sobre">
       <div className={S.inner}>
         <div className={S.header}>
-          <SectionBadge icon="❤️" label="Conheça melhor" />
+          <SectionBadge icon={<FaHeart />} label="Conheça melhor" />
           <h2 className={S.title}>Sobre o Jorel</h2>
           <p className={S.subtitle}>
             Um Beagle cheio de personalidade, amor e muita energia para compartilhar
@@ -61,7 +63,7 @@ const SobreSection = () => {
                       S[`feature_icon--${feature.variant}`]
                     )}
                   >
-                    {feature.icon}
+                    <feature.icon />
                   </div>
                   <div className={S.feature_text}>
                     <span className={S.feature_title}>{feature.title}</span>

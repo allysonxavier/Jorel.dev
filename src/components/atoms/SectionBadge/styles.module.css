@@ -13,6 +13,10 @@
   text-transform: uppercase;
 }
 
+.badge--light {
+  background-color: var(--color-white);
+}
+
 .badge_icon {
   display: flex;
   align-items: center;

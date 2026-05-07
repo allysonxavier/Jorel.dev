@@ -12,18 +12,10 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 48px;
-  gap: 24px;
-}
-
-.header_left {
-  display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
-  min-width: 0;
-  flex: 1;
+  margin-bottom: 48px;
 }
 
 .title {
@@ -36,6 +28,14 @@
   word-break: break-word;
 }
 
+.header_title_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
 .subtitle {
   font-size: var(--font-size-16);
   color: var(--color-text-secondary);
@@ -46,8 +46,6 @@
   display: flex;
   gap: 12px;
   flex-shrink: 0;
-  align-self: flex-start;
-  margin-top: 4px;
 }
 
 .nav_btn {
@@ -130,7 +128,7 @@
     grid-template-columns: 1fr;
   }
 
-  .header {
+  .header_title_row {
     flex-direction: column;
     align-items: flex-start;
   }

@@ -8,6 +8,8 @@ import { clsx } from 'clsx'
 
 import { jorelPhotos } from 'constants/jorel'
 
+import { FaPaw } from 'react-icons/fa'
+
 import SectionBadge from 'components/atoms/SectionBadge'
 import Button from 'components/atoms/Button'
 
@@ -31,7 +33,7 @@ const HeroSection = () => {
       <div className={S.inner}>
         <div className={S.content}>
           <div className={S.badge_wrapper}>
-            <SectionBadge icon="🐾" label="Bem-vindo ao Jorelverso" />
+            <SectionBadge icon={<FaPaw />} label="Bem-vindo ao Jorelverso" light />
           </div>
 
           <h1 className={S.title}>

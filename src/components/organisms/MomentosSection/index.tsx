@@ -6,6 +6,8 @@ import Image from 'next/image'
 
 import { clsx } from 'clsx'
 
+import { FaCamera } from 'react-icons/fa'
+
 import { momentosPhotos } from 'constants/jorel'
 
 import SectionBadge from 'components/atoms/SectionBadge'
@@ -30,32 +32,31 @@ const MomentosSection = () => {
     <section className={S.section} id="momentos">
       <div className={S.inner}>
         <div className={S.header}>
-          <div className={S.header_left}>
-            <SectionBadge icon="📷" label="Galeria" />
+          <SectionBadge icon={<FaCamera />} label="Galeria" light />
+          <div className={S.header_title_row}>
             <h2 className={S.title}>Momentos do Jorel</h2>
-            <p className={S.subtitle}>
-              Confira os melhores momentos e aventuras do nosso amigo de quatro patas
-            </p>
+            <div className={S.nav_buttons}>
+              <button
+                className={clsx(S.nav_btn, canPrev && S['nav_btn--active'])}
+                onClick={prev}
+                disabled={!canPrev}
+                aria-label="Anterior"
+              >
+                ←
+              </button>
+              <button
+                className={clsx(S.nav_btn, canNext && S['nav_btn--active'])}
+                onClick={next}
+                disabled={!canNext}
+                aria-label="Próximo"
+              >
+                →
+              </button>
+            </div>
           </div>
-
-          <div className={S.nav_buttons}>
-            <button
-              className={clsx(S.nav_btn, canPrev && S['nav_btn--active'])}
-              onClick={prev}
-              disabled={!canPrev}
-              aria-label="Anterior"
-            >
-              ←
-            </button>
-            <button
-              className={clsx(S.nav_btn, canNext && S['nav_btn--active'])}
-              onClick={next}
-              disabled={!canNext}
-              aria-label="Próximo"
-            >
-              →
-            </button>
-          </div>
+          <p className={S.subtitle}>
+            Confira os melhores momentos e aventuras do nosso amigo de quatro patas
+          </p>
         </div>
 
         <div className={S.gallery}>
