@@ -130,14 +130,14 @@ export const aumigos: Aumigo[] = [
     breed: 'Husky',
     age: '5 anos',
     description: 'O mais imponente e leal, adora corridas longas',
-    photo: 'https://images.unsplash.com/photo-1617895153857-82fe0c43aa28?w=400&h=400&fit=crop'
+    photo: 'https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=400&h=400&fit=crop'
   },
   {
     name: 'Mel',
     breed: 'Dachshund',
     age: '2 anos',
     description: 'Pequena e corajosa, não tem medo de nada',
-    photo: 'https://images.unsplash.com/photo-1518887668165-573c68c28bc5?w=400&h=400&fit=crop'
+    photo: 'https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=400&h=400&fit=crop'
   }
 ]
 
