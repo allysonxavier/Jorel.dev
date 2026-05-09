@@ -1,6 +1,6 @@
 .section {
   background-color: var(--color-bg-primary);
-  padding: 100px 24px;
+  padding: clamp(56px, 7vw, 80px) 24px;
 }
 
 .inner {
@@ -38,6 +38,13 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  outline: none;
+}
+
+.carousel:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 6px;
+  border-radius: var(--radius-12);
 }
 
 /* Cards grid */
@@ -48,6 +55,19 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.cards--next { animation: slideFromRight 0.32s ease; }
+.cards--prev { animation: slideFromLeft  0.32s ease; }
 
 /* Nav buttons */
 .nav_btn {
@@ -138,16 +158,43 @@
   line-height: 1.5;
 }
 
+/* Dots (mobile only) */
+.dots {
+  display: none;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.dot--active {
+  width: 18px;
+  border-radius: 3px;
+  background-color: var(--color-orange);
+}
+
 /* Counter */
 .counter {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 12px;
   font-size: var(--font-size-14);
   color: var(--color-text-secondary);
 }
 
-/* Mobile: show 1 card at a time */
+/* Mobile: show 1 card at a time, show dots, hide arrows */
 @media (max-width: 640px) {
+  .nav_btn {
+    display: none;
+  }
+
   .cards {
     grid-template-columns: 1fr;
     max-width: 360px;
@@ -156,5 +203,9 @@
 
   .cards > *:not(:first-child) {
     display: none;
+  }
+
+  .dots {
+    display: flex;
   }
 }

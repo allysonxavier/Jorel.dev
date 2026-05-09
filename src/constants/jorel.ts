@@ -55,7 +55,7 @@ export const sobreFeatures: SobreFeature[] = [
   {
     icon: FaBed,
     title: 'Dormir a tarde toda',
-    description: 'Beagles elevaram a soneca à categoria de esporte — o Jorel consegue dormir em qualquer canto, de qualquer jeito, a qualquer hora',
+    description: 'Jorel consegue dormir em qualquer canto, de qualquer jeito, a qualquer hora',
     variant: 'orange',
     photo: '/jorelzinho.jpeg'
   }

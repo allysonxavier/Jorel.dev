@@ -32,6 +32,14 @@
   font-size: var(--font-size-16);
 }
 
+@media (max-width: 640px) {
+  .button_size--large {
+    height: 48px;
+    padding: 0 24px;
+    font-size: var(--font-size-14);
+  }
+}
+
 /* Solid */
 .button_variant--solid {
   background-color: var(--color-orange);
