@@ -11,7 +11,6 @@ import { jorelPhotos } from 'constants/jorel'
 import { FaPaw } from 'react-icons/fa'
 
 import SectionBadge from 'components/atoms/SectionBadge'
-import Button from 'components/atoms/Button'
 
 import S from './styles.module.css'
 
@@ -45,17 +44,6 @@ const HeroSection = () => {
             Um universo dedicado ao cachorrinho mais adorável, suas aventuras,
             amigos peludos e momentos inesquecíveis. Explore a vida do Jorel!
           </p>
-
-          <div className={S.actions}>
-            <Button as="a" href="#momentos" label="Ver Fotos →" size="large" />
-            <Button
-              as="a"
-              href="#sobre"
-              label="Sobre o Jorel"
-              variant="outline"
-              size="large"
-            />
-          </div>
         </div>
 
         <div className={S.slideshow}>

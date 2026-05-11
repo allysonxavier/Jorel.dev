@@ -52,12 +52,6 @@
   max-width: 480px;
 }
 
-.actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 /* Slideshow */
 .slideshow {
   position: relative;
