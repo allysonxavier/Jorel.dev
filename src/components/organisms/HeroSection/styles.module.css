@@ -110,14 +110,17 @@
   width: 28px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .section {
+    padding-top: calc(64px + 32px);
+  }
+
   .inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
   .slideshow {
-    max-height: 400px;
     aspect-ratio: 4 / 3;
   }
 }
