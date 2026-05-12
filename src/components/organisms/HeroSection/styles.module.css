@@ -28,7 +28,7 @@
 }
 
 .title {
-  font-size: clamp(3.6rem, 5vw, 7.2rem);
+  font-size: clamp(3.6rem, 4vw, 7.2rem);
   font-weight: var(--font-weight-black);
   line-height: 1.05;
   letter-spacing: -2px;

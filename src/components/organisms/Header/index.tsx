@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 import { clsx } from 'clsx'
 
+import { FaDog } from 'react-icons/fa'
+
 import { navLinks } from 'constants/jorel'
 
 import Button from 'components/atoms/Button'
@@ -20,7 +22,7 @@ const Header = () => {
       <header className={S.header}>
         <div className={S.inner}>
           <a className={S.logo} href="#">
-            <div className={S.logo_icon}>🐾</div>
+            <div className={S.logo_icon}><FaDog /></div>
             <span className={S.logo_name}>Jorelverso</span>
           </a>
 

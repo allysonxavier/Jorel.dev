@@ -36,7 +36,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className={S.title}>
-            <span className={S.title_orange}>Conheça o Jorel,</span>
+            <span className={S.title_orange}>Conheça Jorel,</span>
             <span className={S.title_black}>o Beagle mais amado</span>
           </h1>
 
