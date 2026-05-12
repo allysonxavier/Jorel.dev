@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { FaCamera } from 'react-icons/fa'
+import { FaCamera, FaCloudUploadAlt, FaPaw } from 'react-icons/fa'
 
 import Button from 'components/atoms/Button'
 
@@ -120,7 +120,7 @@ const EnvioSection = () => {
             <div className={S.field}>
               <label className={S.label}>Upload da Foto</label>
               <div className={S.upload_area}>
-                <div className={S.upload_icon}>☁️</div>
+                <div className={S.upload_icon}><FaCloudUploadAlt /></div>
                 <span className={S.upload_label}>
                   Clique para fazer upload ou arraste a foto aqui
                 </span>
@@ -131,7 +131,8 @@ const EnvioSection = () => {
             <div className={S.submit_wrapper}>
               <Button
                 type="submit"
-                label="Enviar Foto 🐾"
+                label="Enviar Foto"
+                rightIcon={<FaPaw />}
                 size="large"
               />
             </div>

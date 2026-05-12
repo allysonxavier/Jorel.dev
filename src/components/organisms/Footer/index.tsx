@@ -1,3 +1,5 @@
+import { FaDog } from 'react-icons/fa'
+
 import S from './styles.module.css'
 
 const quickLinks = [
@@ -27,7 +29,7 @@ const Footer = () => (
       <div className={S.top}>
         <div className={S.brand}>
           <div className={S.logo}>
-            <div className={S.logo_icon}>🐾</div>
+            <div className={S.logo_icon}><FaDog /></div>
             <span className={S.logo_name}>Jorelverso</span>
           </div>
           <p className={S.brand_description}>
