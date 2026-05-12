@@ -30,8 +30,8 @@ const HumanosSection = () => {
   const canPrev = offset > 0
   const canNext = isMobile ? offset + 1 < total : offset + VISIBLE < total
 
-  const prev = () => { if (canPrev) { setDirection('prev'); setOffset(o => o - 1) } }
-  const next = () => { if (canNext) { setDirection('next'); setOffset(o => o + 1) } }
+  const prev = () => { if (canPrev) { setDirection('prev'); setOffset(o => isMobile ? o - 1 : Math.max(0, o - VISIBLE)) } }
+  const next = () => { if (canNext) { setDirection('next'); setOffset(o => isMobile ? o + 1 : Math.min(total - VISIBLE, o + VISIBLE)) } }
 
   const swipeHandlers = useSwipe(prev, next)
 

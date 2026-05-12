@@ -6,7 +6,7 @@ import inter from 'theme/fontFamily'
 import 'theme/styles.css'
 
 export const metadata: Metadata = {
-  title: 'Jorelverso - O Beagle mais famoso',
+  title: 'Jorelverso - O Beagle mais amado',
   description: 'Um universo dedicado ao Jorel, o Beagle mais adorável. Aventuras, amigos peludos e momentos inesquecíveis.'
 }
 

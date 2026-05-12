@@ -37,7 +37,7 @@ const HeroSection = () => {
 
           <h1 className={S.title}>
             <span className={S.title_orange}>Conheça o Jorel,</span>
-            <span className={S.title_black}>o Beagle mais famoso</span>
+            <span className={S.title_black}>o Beagle mais amado</span>
           </h1>
 
           <p className={S.description}>

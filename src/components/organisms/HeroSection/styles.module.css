@@ -104,20 +104,33 @@
   width: 28px;
 }
 
+/* Medium tablet: 2 columns still, just clear the fixed header */
 @media (max-width: 1024px) {
   .section {
     align-items: flex-start;
-    padding-top: calc(64px + 24px);
     min-height: unset;
+    padding-top: calc(64px + 32px);
   }
 
   .inner {
-    grid-template-columns: 1fr;
     gap: 40px;
   }
 
   .slideshow {
-    aspect-ratio: 4 / 3;
+    max-height: 480px;
+  }
+}
+
+/* Small tablet / mobile: collapse to single column */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .slideshow {
+    aspect-ratio: 16 / 9;
+    max-height: unset;
   }
 }
 
