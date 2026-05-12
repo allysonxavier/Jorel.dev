@@ -144,15 +144,136 @@
   line-height: 1.5;
 }
 
+/* Mobile icon scroll — oculto no desktop */
+.features_mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
   }
 
   .image_wrapper {
     height: auto;
     min-height: unset;
     aspect-ratio: 4 / 3;
+  }
+
+  /* Oculta lista vertical, exibe layout mobile */
+  .features_list {
+    display: none;
+  }
+
+  .features_mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Row scrollável */
+  .icons_scroll {
+    display: flex;
+    gap: 0;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-orange) var(--color-border);
+  }
+
+  .icons_scroll::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .icons_scroll::-webkit-scrollbar-track {
+    background: var(--color-border);
+    border-radius: 2px;
+  }
+
+  .icons_scroll::-webkit-scrollbar-thumb {
+    background: var(--color-orange);
+    border-radius: 2px;
+  }
+
+  /* Coluna de features — min-width: 0 permite o scroll funcionar dentro do grid */
+  .features_col {
+    min-width: 0;
+  }
+
+  /* Botão de ícone — padding uniforme em todos os estados para não deslocar vizinhos */
+  .icon_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: var(--radius-12);
+    transition: background-color 0.2s ease;
+  }
+
+  .icon_btn--active {
+    background-color: var(--color-orange-light);
+  }
+
+  .icon_btn--active .icon_label {
+    color: var(--color-orange);
+  }
+
+  .icon_circle {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--color-white);
+  }
+
+  .icon_circle--orange {
+    background-color: var(--color-orange);
+  }
+
+  .icon_circle--dark {
+    background-color: var(--color-black);
+  }
+
+  .icon_label {
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  /* Painel de detalhe */
+  .detail_panel {
+    background-color: var(--color-orange-light);
+    border: 1.5px solid var(--color-orange-border);
+    border-radius: var(--radius-16);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail_title {
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .detail_description {
+    font-size: var(--font-size-14);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
   }
 }

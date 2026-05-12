@@ -38,12 +38,14 @@ const SobreSection = () => {
               alt="Jorel"
               fill
               className={S.image}
-              sizes="(max-width: 900px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 
-          <div>
+          <div className={S.features_col}>
             <h3 className={S.features_title}>O que o Jorel ama fazer</h3>
+
+            {/* Desktop: lista vertical */}
             <ul className={S.features_list}>
               {sobreFeatures.map((feature, i) => (
                 <li
@@ -57,12 +59,7 @@ const SobreSection = () => {
                   tabIndex={0}
                   onKeyDown={e => e.key === 'Enter' && setSelected(i)}
                 >
-                  <div
-                    className={clsx(
-                      S.feature_icon,
-                      S[`feature_icon--${feature.variant}`]
-                    )}
-                  >
+                  <div className={clsx(S.feature_icon, S[`feature_icon--${feature.variant}`])}>
                     <feature.icon />
                   </div>
                   <div className={S.feature_text}>
@@ -72,6 +69,30 @@ const SobreSection = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Mobile: ícones em linha com scroll + painel de detalhe */}
+            <div className={S.features_mobile}>
+              <div className={S.icons_scroll}>
+                {sobreFeatures.map((feature, i) => (
+                  <button
+                    key={feature.title}
+                    className={clsx(S.icon_btn, i === selected && S['icon_btn--active'])}
+                    onClick={() => setSelected(i)}
+                    aria-label={feature.title}
+                  >
+                    <div className={clsx(S.icon_circle, S[`icon_circle--${feature.variant}`], i === selected && S['icon_circle--selected'])}>
+                      <feature.icon />
+                    </div>
+                    <span className={S.icon_label}>{feature.shortLabel}</span>
+                  </button>
+                ))}
+              </div>
+
+              <div className={S.detail_panel}>
+                <span className={S.detail_title}>{sobreFeatures[selected].title}</span>
+                <span className={S.detail_description}>{sobreFeatures[selected].description}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

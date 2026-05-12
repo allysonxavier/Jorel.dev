@@ -17,6 +17,7 @@ export const jorelPhotos = [
 
 export type SobreFeature = {
   icon: ComponentType
+  shortLabel: string
   title: string
   description: string
   variant: 'orange' | 'dark'
@@ -26,6 +27,7 @@ export type SobreFeature = {
 export const sobreFeatures: SobreFeature[] = [
   {
     icon: FaBone,
+    shortLabel: 'Brincar',
     title: 'Brincar com seus brinquedos',
     description: 'Jorel adora seus brinquedos favoritos e passa horas se divertindo',
     variant: 'orange',
@@ -33,6 +35,7 @@ export const sobreFeatures: SobreFeature[] = [
   },
   {
     icon: FaWalking,
+    shortLabel: 'Passeios',
     title: 'Passeios ao ar livre',
     description: 'Explorar novos lugares e cheirar tudo pelo caminho é sua paixão',
     variant: 'dark',
@@ -40,6 +43,7 @@ export const sobreFeatures: SobreFeature[] = [
   },
   {
     icon: FaUtensils,
+    shortLabel: 'Petiscos',
     title: 'Petiscos deliciosos',
     description: 'Nada deixa o Jorel mais feliz do que um petisco especial',
     variant: 'orange',
@@ -47,6 +51,7 @@ export const sobreFeatures: SobreFeature[] = [
   },
   {
     icon: FaPaw,
+    shortLabel: 'Amigos',
     title: 'Fazer novos amigos',
     description: 'Jorel é super sociável e adora conhecer outros cachorros e pessoas',
     variant: 'dark',
@@ -54,6 +59,7 @@ export const sobreFeatures: SobreFeature[] = [
   },
   {
     icon: FaBed,
+    shortLabel: 'Dormir',
     title: 'Dormir a tarde toda',
     description: 'Jorel consegue dormir em qualquer canto, de qualquer jeito, a qualquer hora',
     variant: 'orange',
