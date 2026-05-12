@@ -1,4 +1,7 @@
-import { FaDog } from 'react-icons/fa'
+import type { ComponentType } from 'react'
+
+import { FaDog, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { SiTiktok } from 'react-icons/si'
 
 import S from './styles.module.css'
 
@@ -16,11 +19,11 @@ const participateLinks = [
   { label: 'Newsletter', href: '#' }
 ]
 
-const socialLinks = [
-  { icon: '📸', label: 'Instagram', href: '#' },
-  { icon: '👥', label: 'Facebook', href: '#' },
-  { icon: '▶️', label: 'YouTube', href: '#' },
-  { icon: '🎵', label: 'TikTok', href: '#' }
+const socialLinks: { icon: ComponentType; label: string; href: string }[] = [
+  { icon: FaInstagram, label: 'Instagram', href: '#' },
+  { icon: FaFacebookF, label: 'Facebook', href: '#' },
+  { icon: FaYoutube, label: 'YouTube', href: '#' },
+  { icon: SiTiktok, label: 'TikTok', href: '#' }
 ]
 
 const Footer = () => (
@@ -40,7 +43,7 @@ const Footer = () => (
           <div className={S.social_links}>
             {socialLinks.map(s => (
               <a key={s.label} href={s.href} className={S.social_link} aria-label={s.label}>
-                {s.icon}
+                <s.icon />
               </a>
             ))}
           </div>
@@ -67,7 +70,7 @@ const Footer = () => (
 
       <div className={S.bottom}>
         <span className={S.copyright}>
-          © 2025 Jorelverso. Todos os direitos reservados.
+          © 2026 Jorelverso. Todos os direitos reservados.
         </span>
         <div className={S.legal_links}>
           <a href="#" className={S.legal_link}>Política de Privacidade</a>
