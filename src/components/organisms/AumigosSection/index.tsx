@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { clsx } from 'clsx'
 
-import { FaPaw } from 'react-icons/fa'
+import { FaPaw, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { aumigos } from 'constants/jorel'
 
@@ -65,7 +65,7 @@ const AumigosSection = () => {
             disabled={!canPrev}
             aria-label="Aumigo anterior"
           >
-            ←
+            <FaChevronLeft />
           </button>
 
           <div
@@ -98,7 +98,7 @@ const AumigosSection = () => {
             disabled={!canNext}
             aria-label="Próximo aumigo"
           >
-            →
+            <FaChevronRight />
           </button>
         </div>
 

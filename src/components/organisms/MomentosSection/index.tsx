@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { clsx } from 'clsx'
 
-import { FaCamera } from 'react-icons/fa'
+import { FaCamera, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { momentosPhotos } from 'constants/jorel'
 
@@ -65,7 +65,7 @@ const MomentosSection = () => {
             disabled={!canPrev}
             aria-label="Foto anterior"
           >
-            ←
+            <FaChevronLeft />
           </button>
 
           <div
@@ -91,7 +91,7 @@ const MomentosSection = () => {
             disabled={!canNext}
             aria-label="Próxima foto"
           >
-            →
+            <FaChevronRight />
           </button>
         </div>
 

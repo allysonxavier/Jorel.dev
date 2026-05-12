@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { clsx } from 'clsx'
 
-import { FaUsers } from 'react-icons/fa'
+import { FaUsers, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 import { humanosAmigos } from 'constants/jorel'
 
@@ -65,7 +65,7 @@ const HumanosSection = () => {
             disabled={!canPrev}
             aria-label="Humano anterior"
           >
-            ←
+            <FaChevronLeft />
           </button>
 
           <div
@@ -96,7 +96,7 @@ const HumanosSection = () => {
             disabled={!canNext}
             aria-label="Próximo humano"
           >
-            →
+            <FaChevronRight />
           </button>
         </div>
 
