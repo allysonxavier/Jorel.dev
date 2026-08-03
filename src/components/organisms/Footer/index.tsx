@@ -1,30 +1,13 @@
-import type { ComponentType } from 'react'
+import { FaDog } from 'react-icons/fa'
 
-import { FaDog, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
-import { SiTiktok } from 'react-icons/si'
+import {
+  QUICK_LINKS,
+  PARTICIPATE_LINKS,
+  SOCIAL_LINKS,
+  LEGAL_LINKS
+} from './constants'
 
 import S from './styles.module.css'
-
-const quickLinks = [
-  { label: 'Sobre o Jorel', href: '#sobre' },
-  { label: 'Galeria', href: '#momentos' },
-  { label: 'Aumigos', href: '#aumigos' },
-  { label: 'Humanos Amigos', href: '#humanos' }
-]
-
-const participateLinks = [
-  { label: 'Pague um Petisco', href: '#petisco' },
-  { label: 'Enviar Foto', href: '#envio' },
-  { label: 'Contato', href: '#' },
-  { label: 'Newsletter', href: '#' }
-]
-
-const socialLinks: { icon: ComponentType; label: string; href: string }[] = [
-  { icon: FaInstagram, label: 'Instagram', href: '#' },
-  { icon: FaFacebookF, label: 'Facebook', href: '#' },
-  { icon: FaYoutube, label: 'YouTube', href: '#' },
-  { icon: SiTiktok, label: 'TikTok', href: '#' }
-]
 
 const Footer = () => (
   <footer className={S.footer}>
@@ -41,7 +24,7 @@ const Footer = () => (
             por cachorros.
           </p>
           <div className={S.social_links}>
-            {socialLinks.map(s => (
+            {SOCIAL_LINKS.map(s => (
               <a key={s.label} href={s.href} className={S.social_link} aria-label={s.label}>
                 <s.icon />
               </a>
@@ -51,7 +34,7 @@ const Footer = () => (
 
         <div className={S.links_col}>
           <span className={S.links_title}>Links Rápidos</span>
-          {quickLinks.map(link => (
+          {QUICK_LINKS.map(link => (
             <a key={link.label} href={link.href} className={S.link}>
               {link.label}
             </a>
@@ -60,7 +43,7 @@ const Footer = () => (
 
         <div className={S.links_col}>
           <span className={S.links_title}>Participe</span>
-          {participateLinks.map(link => (
+          {PARTICIPATE_LINKS.map(link => (
             <a key={link.label} href={link.href} className={S.link}>
               {link.label}
             </a>
@@ -73,8 +56,11 @@ const Footer = () => (
           © 2026 Jorelverso. Todos os direitos reservados.
         </span>
         <div className={S.legal_links}>
-          <a href="#" className={S.legal_link}>Política de Privacidade</a>
-          <a href="#" className={S.legal_link}>Termos de Uso</a>
+          {LEGAL_LINKS.map(link => (
+            <a key={link.label} href={link.href} className={S.legal_link}>
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
